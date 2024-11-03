@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Korean with Fun Movies!</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <h1>Goblin 도깨비 - Episode <span id="episode-number">1</span></h1>
+        
+        <!-- Episode Selection -->
+        <label for="episode-select">Select Episode:</label>
+        <select id="episode-select">
+            <option value="1">Episode 1</option>
+            <option value="2">Episode 2</option>
+            <option value="3">Episode 3</option>
+            <option value="4">Episode 4</option>
+            <option value="5">Episode 5</option>
+            <option value="6">Episode 6</option>
+            <option value="7">Episode 7</option>
+            <option value="8">Episode 8</option>
+            <option value="9">Episode 9</option>
+            <option value="10">Episode 10</option>
+            <option value="11">Episode 11</option>
+            <option value="12">Episode 12</option>
+            <option value="13">Episode 13</option>
+            <option value="14">Episode 14</option>
+            <option value="15">Episode 15</option>
+            <option value="16">Episode 16</option>
+        </select>
+
+        <!-- Control Panel -->
+        <div class="controls">
+            <!-- Search, Mode Toggle, and Reset -->
+            <input type="text" id="search-input" placeholder="Search subtitles..." />
+            <button id="search-button">
+                <img src="https://rsim89.github.io/korean_learning_movies/images/search.svg" alt="Search" />
+            </button>
+            <button id="toggle-mode-button">
+                <img src="https://rsim89.github.io/korean_learning_movies/images/korean.svg" alt="Mode: Korean only" />
+            </button>
+            <button id="reset-button">
+                <img src="https://rsim89.github.io/korean_learning_movies/images/reset.svg" alt="Reset" />
+            </button>
+            <button id="show-highlighted-popup">
+                <img src="https://rsim89.github.io/korean_learning_movies/images/subtitleoff.svg" alt="Hide Highlighted Subtitles" />
+            </button>
+            <button id="toggle-elaboration-button">
+                <img src="https://rsim89.github.io/korean_learning_movies/images/elaborationoff.svg" alt="Hide Elaboration" />
+            </button>
+        </div>
+
+        <!-- Segment Playback Controls -->
+        <div class="controls">
+            <div class="control-group">
+                <label for="segment-count">Segments to play:</label>
+                <input type="number" id="segment-count" min="5" value="5">
+            </div>
+            <div class="control-group">
+                <label for="start-index">Start Index:</label>
+                <input type="number" id="start-index" min="1">
+            </div>
+            <div class="control-group">
+                <label for="end-index">End Index:</label>
+                <input type="number" id="end-index" min="1">
+            </div>
+            <button id="start-button">Start</button>
+        </div>
+
+        <!-- Video Player -->
+        <video id="video-player" controls preload="auto">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Subtitle Blocks Container -->
+        <div id="subtitle-blocks" class="subtitle-blocks" role="complementary" aria-labelledby="subtitle-heading">
+            <h2 id="subtitle-heading" style="display: none;">Subtitle Blocks</h2>
+        </div>
+    </div>
+
+    <!-- Popups -->
+    <div id="search-results" class="popup">
+        <span class="popup-close" onclick="togglePopup()">×</span>
+        <h2>Search Results</h2>
+        <div id="search-results-container"></div>
+    </div>   
+
+    <!-- External JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
